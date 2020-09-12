@@ -1,7 +1,7 @@
 const supertest = require("supertest")
 const server = require("../server")
 const db = require("../data/config")
-const smurfsModel = require("../smurfs/smurfs-model")
+
 
 
 beforeEach(async () => {
