@@ -4,8 +4,9 @@ function get() {
     return db("smurfs")
 }
 
-function insert(smurf) {
-    return db("smurfs").insert(smurf, "id").then(([id]) => get(id))
+async function create(data) {
+    const [id] = await db("smurfs").insert(data)
+    return findById(id)
 }
 
 function findById(id) {
@@ -18,7 +19,7 @@ function remove(id) {
 
 module.exports = {
     get,
-    insert,
+    create,
     findById,
     remove
 }

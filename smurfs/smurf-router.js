@@ -27,7 +27,7 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
     try{
-        const smurf = await Smurfs.insert(req.body)
+        const smurf = await Smurfs.create(req.body)
         res.status(201).json(smurf)
     }catch(err) {
         next(err)
